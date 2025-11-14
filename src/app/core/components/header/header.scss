@@ -1,0 +1,36 @@
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  // gap: 40px;
+}
+
+.menu__item a{
+  transition: 0.3s;
+  
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+.route {
+  padding: 15px;
+}
+
+.logo__tree {
+  width: 35px;
+  height: 35x;
+  transform: scale(1);
+  
+  &:hover {
+      transform: scale(1.05)
+      ;
+    }
+}

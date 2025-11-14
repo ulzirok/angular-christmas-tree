@@ -1,0 +1,108 @@
+// @import 'mixins';
+
+.main {
+  position: relative;
+  background: url('../../../../assets/images/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 15px;
+}
+
+.ball {
+  position: absolute;
+  top: 0;
+  width: auto;
+
+  &-1 {
+    height: 70%;
+    left: 15%;
+  }
+
+  &-2 {
+    height: 50%;
+    right: 15%;
+  }
+}
+
+.h1-wrapper {
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: auto;
+  height: 30%;
+  text-align: center;
+  border: 3px solid var(--color-accent);
+  border-radius: 25px;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(6px);
+  font-size: 1.5rem;
+  padding: 50px;
+}
+
+.btn {
+  position: relative;
+  width: 200px;
+  height: 60px;
+  border: 3px solid var(--color-accent);
+  border-radius: 30px;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(6px);
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: var(--color-white);
+  cursor: pointer;
+  overflow: hidden;
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+  &:hover {
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ball {
+    &-1 {
+      height: 50%;
+    }
+    &-2 {
+      height: 30%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .h1-wrapper {
+    padding: 30px;
+  }
+  .btn {
+    width: 180px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .ball {
+    &-1 {
+      height: 40%;
+    }
+
+    &-2 {
+      height: 20%;
+    }
+  }
+}

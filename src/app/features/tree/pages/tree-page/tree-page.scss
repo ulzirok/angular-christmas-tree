@@ -1,0 +1,57 @@
+.tree-page {
+  background: rgba(22, 41, 41, 0.5);
+  min-height: calc(100vh - var(--footer-height) - var(--header-height));
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../../../../../assets/images/bg.jpg') center/cover no-repeat;
+    filter: blur(2px);
+    transform: scale(1.1);
+    z-index: -1;
+  }
+}
+
+.tree-page__inner {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 10px 0;
+}
+
+app-tree-settings {
+  flex: 0 0 25%;
+}
+
+app-christmas-tree {
+  flex: 0 0 48%;
+}
+
+app-favourites {
+  flex: 0 0 25%;
+}
+
+@media(max-width: 992px) {
+  app-tree-settings {
+    flex: 0 0 23%;
+  }
+
+  app-christmas-tree {
+    flex: 0 0 48%;
+  }
+
+  app-favourites {
+    flex: 0 0 25%;
+  }
+
+}
+@media(max-width: 768px) {
+
+  .tree-page__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+}

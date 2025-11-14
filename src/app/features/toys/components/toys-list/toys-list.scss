@@ -1,0 +1,19 @@
+.toys__list {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+p {
+  font-size: 2rem;
+  margin-left: 20px;
+}
+
+@media(max-width: 768px) {
+  .toys__list {
+    justify-content: center;
+  }
+}

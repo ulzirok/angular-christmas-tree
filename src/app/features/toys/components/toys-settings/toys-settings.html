@@ -1,0 +1,121 @@
+<div class="settings__top">
+  <div class="settings__top-left">
+    <app-button-volume></app-button-volume>
+    <app-button-snow></app-button-snow>
+  </div>
+  <app-search></app-search>
+</div>
+
+<div class="settings__sort">
+  <p>СОРТИРОВАТЬ:</p>
+  <select name="" id="">
+    <option value="">По названию "А" до "Я"</option>
+    <option value="">По названию "Я" до "А"</option>
+    <option value="">По количеству по возрастанию</option>
+    <option value="">По количеству по убыванию</option>
+  </select>
+</div>
+
+<div class="settings__filter">
+  <div class="settings__filter-form">
+    <p>ФОРМА:</p>
+    
+    <div class="settings__filter-toys">
+      <div class="settings__filter-toy">
+        <img class="toys__img" src="assets/images/bell.svg" alt="Колокол">
+        <p class="toy__name">Колокол</p>
+      </div>
+      <div class="settings__filter-toy">
+        <img class="toys__img" src="assets/images/ball.svg" alt="Шар">
+        <p class="toy__name">Шар</p>
+      </div>
+      <div class="settings__filter-toy">
+        <img class="toys__img" src="assets/images/pine.svg" alt="Шишка">
+        <p class="toy__name">Шишка</p>
+      </div>
+      <div class="settings__filter-toy">
+        <img class="toys__img" src="assets/images/star.svg" alt="Звезда">
+        <p class="toy__name">Звезда</p>
+      </div>
+      <div class="settings__filter-toy">
+        <img class="toys__img" src="assets/images/snowflake.svg" alt="Снежинка">
+        <p class="toy__name">Снежинка</p>
+      </div>
+      <div class="settings__filter-toy">
+        <img class="toys__img" src="assets/images/bird_toy.svg" alt="Фигурка">
+        <p class="toy__name">Фигурка</p>
+      </div>
+    </div>
+  </div>
+  <div class="settings__filter-color-wrap">
+    <p>ЦВЕТ:</p>
+    
+    <div class="settings__filter-colors">
+      <div class="settings__filter-color">
+        <img src="assets/images/white.png" alt="white" class="color__img">
+      </div>
+      <div class="settings__filter-color">
+        <img src="assets/images/yellow.png" alt="yellow" class="color__img">
+      </div>
+      <div class="settings__filter-color">
+        <img src="assets/images/red.png" alt="red" class="color__img">
+      </div>
+      <div class="settings__filter-color">
+        <img src="assets/images/blue.png" alt="blue" class="color__img">
+      </div>
+      <div class="settings__filter-color">
+        <img src="assets/images/green.png" alt="green" class="color__img">
+      </div>
+    </div>
+  </div>
+  <div class="settings__filter-size-wrap">
+    <p>РАЗМЕР:</p>
+    
+    <div class="settings__filter-sizes">
+      <label class="settings__filter-size">
+        <input class="size__checkbox" type="checkbox">
+        <span class="size__checkmark"></span>
+        Большой
+      </label>
+      <label class="settings__filter-size">
+        <input class="size__checkbox" type="checkbox">
+        <span class="size__checkmark"></span>
+        Средний
+      </label>
+      <label class="settings__filter-size">
+        <input class="size__checkbox" type="checkbox">
+        <span class="size__checkmark"></span>
+        Маленький
+      </label>
+    </div>
+  </div>
+  <div class="settings__filter-favorites">
+    <p>ТОЛЬКО ЛЮБИМЫЕ:</p>
+    
+    <div class="settings__filter-sizes">
+      <label class="settings__filter-size"> 
+        <input class="size__checkbox" type="checkbox">
+        <span class="size__checkmark"></span>
+      </label>
+    </div>
+  </div>
+  <div class="settings__filter-range">
+    <p>ГОД ПРИОБРЕТЕНИЯ:</p>
+      <p>
+        <input type="range" class="settings__filter-range-input" value="1940" min="1940" max="2021">
+      </p>
+      <div class="settings__filter-range-years">
+        <p class="year">1940</p>
+        <p class="year">2021</p>
+      </div>
+  </div>
+  
+  
+</div>
+
+<div class="settings__btns">
+  <button class="btn">Сохранить</button>
+  <app-button-reset></app-button-reset>
+</div>
+
+
