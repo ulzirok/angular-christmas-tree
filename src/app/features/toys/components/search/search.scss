@@ -1,0 +1,31 @@
+input {
+  width: 250px;
+  outline: none;
+  border: 1px solid var(--color-accent);
+  border-radius: 30px;
+  padding: 8px 14px;
+  color: var(--color-white);
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(6px);
+
+  &::placeholder {
+    color: var(--color-white);
+  }
+}
+
+.input__wrap {
+  position: relative;
+}
+
+button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+

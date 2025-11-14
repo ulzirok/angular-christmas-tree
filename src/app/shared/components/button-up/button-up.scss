@@ -1,0 +1,17 @@
+.scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px;
+  background-color: rgba(31, 112, 127, .3);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-dark-blue);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 6;
+}
+
+.scrollTop:hover {
+  background-color: rgba(255, 255, 255, 0.722);
+}

@@ -1,0 +1,35 @@
+.footer {
+  height: var(--footer-height);
+  padding: 5px;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    transform: scale(1);
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.logo__rs {
+  width: 100px;
+  height: 35px;
+}
+
+.logo__github {
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width: 576px) {
+  .text {
+    display: none;
+  }
+}

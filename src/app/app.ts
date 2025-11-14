@@ -1,12 +1,25 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
+import { Footer } from './core/components/footer/footer';
+import { Header } from './core/components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Footer, Header],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('angular-christmas-tree');
+  showHeader: boolean = true;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(() => {
+      const url = this.router.url;
+      if (url === '/') {
+        this.showHeader = false;
+      } else {
+        this.showHeader = true;
+      }
+    });
+  }
 }
