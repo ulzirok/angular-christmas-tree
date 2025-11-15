@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IToy } from '../../models/toy-model';
 
 @Component({
   selector: 'app-toy-card',
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './toy-card.html',
   styleUrl: './toy-card.scss',
 })
-export class ToyCard {}
+export class ToyCard {
+  @Input() toy?: IToy
+  
+  getImagePath(toy?: IToy) {
+    return `assets/images/toys/${toy?.num}.png`;
+  }
+}
