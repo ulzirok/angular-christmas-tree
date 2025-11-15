@@ -3,16 +3,16 @@
     <app-button-volume></app-button-volume>
     <app-button-snow></app-button-snow>
   </div>
-  <app-search></app-search>
+  <app-search (valueChanged)="onInputValueChanged($event)"></app-search>
 </div>
 
 <div class="settings__sort">
   <p>СОРТИРОВАТЬ:</p>
-  <select name="" id="">
-    <option value="">По названию "А" до "Я"</option>
-    <option value="">По названию "Я" до "А"</option>
-    <option value="">По количеству по возрастанию</option>
-    <option value="">По количеству по убыванию</option>
+  <select name="" id="" (input)="onSelectValueChanged($event)">
+    <option value="name-asc">По названию "А" до "Я"</option>
+    <option value="name-desc">По названию "Я" до "А"</option>
+    <option value="count-asc">По количеству по возрастанию</option>
+    <option value="count-desc">По количеству по убыванию</option>
   </select>
 </div>
 

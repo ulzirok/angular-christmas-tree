@@ -1,4 +1,7 @@
 .toy-card {
+  width: 250px;
+  height: 370px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +13,8 @@
   background-color: rgba(31, 112, 127, .3);
   backdrop-filter: blur(6px);
   gap: 10px;
-  padding: 20px;
+  padding: 25px;
+  cursor: pointer;
 }
 
 .name {
@@ -22,4 +26,39 @@ img {
   width: auto;
   display: inline-block;
   margin: 0 auto;
+}
+
+/* Кнопка */
+.favorite-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 13px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Стандартное сердечко */
+.heart-icon {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #d1d1d1;
+  /* серый контур */
+  stroke-width: 2;
+  transition: 0.25s ease;
+}
+
+/* Активное — красное */
+.favorite-btn.active .heart-icon {
+  fill: #e63946;
+  /* красный */
+  stroke: #e63946;
+  transform: scale(1.15);
 }

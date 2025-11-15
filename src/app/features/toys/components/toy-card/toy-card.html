@@ -1,10 +1,17 @@
 <div class="toy-card">
-  <p class="name">Большой шар с рисунком</p>
-  <img src="../../../../../assets/images/toys/1.png" alt="name">
-  <p class="count">Количество: 2</p>
-  <p class="year">Год покупки: 1960 год</p>
-  <p class="shape">Форма игрушки: шар</p>
-  <p class="color">Цвет игрушки: желтый</p>
-  <p class="size">Размер игрушки: большой</p>
-  <p class="favourite">Любимая: нет</p>
+  <button class="favorite-btn active" aria-label="Добавить в избранное">
+    <svg class="heart-icon" viewBox="0 0 24 24">
+      <path d="M12 21s-6-4.35-10-9a6 6 0 0 1 10-7
+                 6 6 0 0 1 10 7c-4 4.65-10 9-10 9z" />
+    </svg>
+  </button>
+  
+  <p class="name">{{toy?.name}}</p>
+  <img [src]="getImagePath(toy)" [alt]="toy?.name">
+  <p class="count">Количество: {{toy?.count}}</p>
+  <p class="year">Год покупки: {{toy?.year}} год</p>
+  <p class="shape">Форма игрушки: {{toy?.shape}}</p>
+  <p class="color">Цвет игрушки: {{toy?.color}}</p>
+  <p class="size">Размер игрушки: {{toy?.size}}</p>
+  <p class="favourite">Любимая: {{toy?.favorite ? 'да' : 'нет'}}</p>
 </div>
