@@ -10,30 +10,12 @@ export class ToysService {
   private http = inject(HttpClient);
   private url: string = 'assets/data/toys.json';
   
-  private originalToys: IToy[] = []
-  private toySubject$ = new BehaviorSubject<IToy[]>([]);
-  public toys$: Observable<IToy[]> = this.toySubject$.asObservable();
+  private toysSubject$ = new BehaviorSubject<IToy[]>([]); //приватный исходный массив
+  public toys$: Observable<IToy[]> = this.toysSubject$.asObservable(); //публичный исходный массив для компонентов
 
   getToys(): void {
     this.http.get<IToy[]>(this.url).subscribe(toys => {
-    this.originalToys = toys
-    this.toySubject$.next(toys);
+      this.toysSubject$.next(toys);
     });
   }
-  
-  searchToys(term: string): void {
-    if (term) {
-      const filteredToys = this.originalToys.filter(toy => toy.name.toLowerCase().includes(term.toLowerCase()));
-      this.toySubject$.next(filteredToys)
-    }
-    else {
-      return this.toySubject$.next(this.originalToys)
-    }
-  }
-  
-  sortToys(value: string) {
-    
-    
-  }
-
 }
