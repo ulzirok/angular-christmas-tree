@@ -25,6 +25,7 @@ export class ToysSettings implements OnInit {
   selectedShapes: string[] = []
   selectedColors: string[] = []
   selectedSizes: string[] = []
+  selectedYears: string[] = []
   
   private toyService = inject(ToysService)
   private stateService = inject(StateService)
@@ -45,29 +46,41 @@ export class ToysSettings implements OnInit {
       this.selectedShapes = this.selectedShapes.filter(el => el !== valueShape); //удаляем форму если уже есть такая форма
     }
     else {
-      this.selectedShapes.push(valueShape); //добавляем если нет
+      // this.selectedShapes.push(valueShape); 
+      this.selectedShapes = [...this.selectedShapes, valueShape]; //добавляем если нет
     }
     this.shapeValueChange(this.selectedShapes)
   }
   getSelectedColors(valueColor: string): void {
     if (!valueColor) return
     if (this.selectedColors.includes(valueColor)) {
-      this.selectedColors = this.selectedColors.filter(el => el !== valueColor); //удаляем форму если уже есть такая форма
+      this.selectedColors = this.selectedColors.filter(el => el !== valueColor);
     }
     else {
-      this.selectedColors.push(valueColor); //добавляем если нет
+      this.selectedColors = [...this.selectedColors, valueColor]
     }
     this.colorValueChange(this.selectedColors)
   }
   getSelectedSizes(valueSize: string): void {
     if (!valueSize) return
     if (this.selectedSizes.includes(valueSize)) {
-      this.selectedSizes = this.selectedSizes.filter(el => el !== valueSize); //удаляем форму если уже есть такая форма
+      this.selectedSizes = this.selectedSizes.filter(el => el !== valueSize);
     }
     else {
-      this.selectedSizes.push(valueSize); //добавляем если нет
+      this.selectedSizes = [...this.selectedSizes, valueSize]
     }
     this.sizeValueChange(this.selectedSizes)
+  }
+  
+  getSelectedYears(valueYear: string): void {
+    if (!valueYear) return
+    if (this.selectedYears.includes(valueYear)) {
+      this.selectedYears.filter(el => el !== valueYear)
+    }
+    else {
+      this.selectedYears = [...this.selectedYears, valueYear]
+    }
+    this.yearValueChange(this.selectedYears)
   }
   
   shapeValueChange(valueShapes: string[]): void {
@@ -78,6 +91,9 @@ export class ToysSettings implements OnInit {
   }
   sizeValueChange(valueSize: string[]): void {
     this.stateService.filterBySize(valueSize)
+  }
+  yearValueChange(valueYear: string[]): void {
+    this.stateService.filterByYear(valueYear)
   }
   
   checkboxValueChange(event: Event): void {
@@ -90,13 +106,40 @@ export class ToysSettings implements OnInit {
     this.stateService.sortToys(valueSelect)
   }
   
+  rangeValueChange(event: Event): void {
+    const valueRange = (event.target as HTMLInputElement).value
+    this.getSelectedYears(valueRange)
+  }
+  
   onInputValueChanged(inputValue: string): void { //поиск
     this.stateService.searchToys(inputValue);
+  }
+  
+  saveSettings() {
+    alert('Фильтры сохранены')
+  }
+  
+  onFiltersResetted() {
+    this.stateService.resetFilters()
   }
   
   ngOnInit(): void {
     this.shapes$ = this.getUniqueFieldWithImages('shape', 'svg')
     this.colors$ = this.getUniqueFieldWithImages('color', 'png')
     this.sizes$ = this.getUniqueFieldWithImages('size')
+    
+    this.stateService.shapeValues$.subscribe((value) => { //При перезагрузке обновляем массив = подгружаем сохранённые значения и перезаписываем актуальные значения в массив
+      this.selectedShapes = value
+    })
+    this.stateService.colorValues$.subscribe((value) => {
+      this.selectedColors = value
+    })
+    this.stateService.sizeValues$.subscribe((value) => {
+      this.selectedSizes = value
+    })
+    this.stateService.yearValues$.subscribe((value) => {
+      this.selectedYears = value
+    })
+    
   }
 }

@@ -115,6 +115,7 @@ app-search {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border: 1px solid transparent;
     }
   }
 }
@@ -146,6 +147,10 @@ app-search {
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
   }
+}
+
+.saved {
+  background-color: #00ff66ba
 }
 
 .toy__name {
@@ -244,4 +249,11 @@ input[type="range"]::-moz-range-thumb {
     box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #00ff66ba 0 -1px 9px, #00ff66ba 0 2px 10px;
     background-color: #00ff66ba;
     backdrop-filter: blur(6px);
+}
+
+.year-selected {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #00ff66ba 0 -1px 9px, #00ff66ba 0 2px 10px;
+  border: 1px solid #00ff66ba;
+  border-radius: 7px;
+  padding: 3px;
 }
