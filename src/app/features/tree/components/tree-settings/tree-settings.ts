@@ -1,13 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ButtonVolume } from '../../../../shared/components/button-volume/button-volume';
 import { ButtonSnow } from '../../../../shared/components/button-snow/button-snow';
 import { TreeCard } from '../../../../shared/components/tree-card/tree-card';
 import { TreeBg } from '../../../../shared/components/tree-bg/tree-bg';
+import { TreeService } from '../../services/tree-service';
+import { Observable } from 'rxjs';
+import { ITree } from '../../models/tree';
+import { AsyncPipe, NgClass } from '@angular/common';
+import { IBg } from '../../models/bg';
+import { IGarland } from '../../models/garkand';
 
 @Component({
   selector: 'app-tree-settings',
-  imports: [ButtonVolume, ButtonSnow, TreeCard, TreeBg],
+  imports: [ButtonVolume, ButtonSnow, TreeCard, TreeBg, AsyncPipe, NgClass],
   templateUrl: './tree-settings.html',
   styleUrl: './tree-settings.scss',
 })
-export class TreeSettings {}
+export class TreeSettings implements OnInit {
+  trees$!: Observable<ITree[]>
+  bgs$!: Observable<IBg[]>
+  garlands$!: Observable<IGarland[]>
+  
+  private treeService = inject(TreeService)
+  
+  onChosenTree(valueTree: string) {
+    this.treeService.chooseTree(valueTree)
+  }
+  
+  onBgChosen(valueBg: string) {
+    this.treeService.chooseBg(valueBg)
+  }
+  
+  onSwitch(event: Event) {
+    const valueSwitch = (event.target as HTMLInputElement).checked
+    this.treeService.onSwitcher(valueSwitch)
+  }
+  
+  changeColor(valueColor: string) {
+    this.treeService.chooseGarland(valueColor)
+  }
+  
+  ngOnInit(): void {
+    this.treeService.getTrees()
+    this.trees$ = this.treeService.trees$
+    
+    this.treeService.getBgs()
+    this.bgs$ = this.treeService.bgs$
+    
+    this.treeService.getGarlands()
+    this.garlands$ = this.treeService.garlands$
+  }
+}

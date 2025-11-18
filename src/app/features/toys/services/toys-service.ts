@@ -15,7 +15,7 @@ export class ToysService {
 
   getToys(): void {
     this.http.get<IToy[]>(this.url).subscribe(toys => {
-      this.toysSubject$.next(toys);
+    this.toysSubject$.next(toys);
     });
   }
 }
