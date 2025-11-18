@@ -1,0 +1,38 @@
+[
+  {
+    "num": "1",
+    "image": "assets/images/bg/1.jpg"
+  },
+  {
+    "num": "2",
+    "image": "assets/images/bg/2.jpg"
+  },
+  {
+    "num": "3",
+    "image": "assets/images/bg/3.jpg"
+  },
+  {
+    "num": "4",
+    "image": "assets/images/bg/4.jpg"
+  },
+  {
+    "num": "5",
+    "image": "assets/images/bg/5.jpg"
+  },
+  {
+    "num": "6",
+    "image": "assets/images/bg/6.jpg"
+  },
+  {
+    "num": "7",
+    "image": "assets/images/bg/7.jpg"
+  },
+  {
+    "num": "8",
+    "image": "assets/images/bg/8.jpg"
+  },
+  {
+    "num": "9",
+    "image": "assets/images/bg/9.jpg"
+  }
+]

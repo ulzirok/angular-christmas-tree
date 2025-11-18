@@ -1,3 +1,35 @@
-<div class="christmas-tree__bg">
-  <img src="assets/images/tree/1.png" alt="tree" class="christmas-tree">
+<div class="christmas-tree__bg" [style.backgroundImage]="'url(' + (bg$ | async) + ')'">
+  <img [src]="tree$ | async" alt="tree" class="christmas-tree">
+
+  <div class="garland-container" [ngStyle]="{display: (isOnGarland$ | async) ? 'flex' : 'none'}">
+    <ul class="lightrope">
+      @for (light of lights1; track $index) {
+      <li [class.on]="light.on" [style.left.px]="light.left" [ngClass]="colorGarland$ | async"></li>
+      }
+
+    </ul>
+    <ul class="lightrope">
+      @for (light of lights2; track $index) {
+      <li [class.on]="light.on" [style.left.px]="light.left" [ngClass]="colorGarland$ | async"></li>
+      }
+
+    </ul>
+    <ul class="lightrope">
+      @for (light of lights3; track $index) {
+      <li [class.on]="light.on" [style.left.px]="light.left" [ngClass]="colorGarland$ | async"></li>
+      }
+
+    </ul>
+    <ul class="lightrope">
+      @for (light of lights4; track $index) {
+      <li [class.on]="light.on" [style.left.px]="light.left" [ngClass]="colorGarland$ | async"></li>
+      }
+
+    </ul>
+    <ul class="lightrope">
+      @for (light of lights5; track $index) {
+      <li [class.on]="light.on" [style.left.px]="light.left" [ngClass]="colorGarland$ | async"></li>
+      }
+    </ul>
+  </div>
 </div>

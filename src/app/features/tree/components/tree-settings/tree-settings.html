@@ -6,38 +6,28 @@
   <div class="tree__setting-tree">
     <p>ВЫБЕРИТЕ ЁЛКУ</p>
     <div class="trees">
-      <app-tree-card></app-tree-card>
-      <app-tree-card></app-tree-card>
-      <app-tree-card></app-tree-card>
-      <app-tree-card></app-tree-card>
-      <app-tree-card></app-tree-card>
-      <app-tree-card></app-tree-card>
+      @for (tree of trees$ | async; track $index) {
+        <app-tree-card [tree]="tree" (chosenTree)="onChosenTree($event)"></app-tree-card>
+      }
     </div>
   </div>
   <div class="tree__setting-bg">
     <p>ВЫБЕРИТЕ ФОН</p>
     <div class="bgs">
-      <app-tree-bg></app-tree-bg>
-      <app-tree-bg></app-tree-bg>
-      <app-tree-bg></app-tree-bg>
-      <app-tree-bg></app-tree-bg>
-      <app-tree-bg></app-tree-bg>
-      <app-tree-bg></app-tree-bg>
-      <app-tree-bg></app-tree-bg>
-      <app-tree-bg></app-tree-bg>
+      @for (bg of bgs$ | async; track $index) {
+        <app-tree-bg [bg]="bg" (bgChosen)="onBgChosen($event)"></app-tree-bg>
+      }
     </div>
   </div>
   <div class="tree__setting-garland">
     <p>ВЫБЕРИТЕ ГИРЛЯНДУ</p>
     <div class="garlands">
-      <button class="color__btn multicolor__btn"></button>
-      <button class="color__btn red__btn"></button>
-      <button class="color__btn blue__btn"></button>
-      <button class="color__btn yellow__btn"></button>
-      <button class="color__btn green__btn"></button>
+      @for (garland of garlands$ | async; track $index) {
+        <button class="color__btn" [ngClass]="garland.color" (click)="changeColor(garland.color)"></button>
+      }
       
       <label class="switch">
-        <input type="checkbox" checked>
+        <input type="checkbox" (change)="onSwitch($event)">
         <span class="slider"></span>
       </label>
 

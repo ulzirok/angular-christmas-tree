@@ -115,9 +115,9 @@ export class ToysSettings implements OnInit {
     this.stateService.searchToys(inputValue);
   }
   
-  saveSettings() {
-    alert('Фильтры сохранены')
-  }
+  // saveSettings() {
+  //   alert('Фильтры сохранены')
+  // }
   
   onFiltersResetted() {
     this.stateService.resetFilters()
