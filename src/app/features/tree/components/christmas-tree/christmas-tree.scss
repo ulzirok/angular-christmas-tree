@@ -15,7 +15,6 @@
 .christmas-tree {
   display: block;
   height: calc(100vh - var(--footer-height) - var(--header-height) - 30px);
-  // pointer-events: none;
 }
 
 .tree-toys {
@@ -63,7 +62,6 @@
   transform: translateX(-50%);
   width: 55%;
   height: auto;
-  // display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

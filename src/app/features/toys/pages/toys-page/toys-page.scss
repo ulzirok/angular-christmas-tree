@@ -18,17 +18,11 @@
 
 .toys-page__inner {
   display: flex;
-  // flex-wrap: wrap;
   gap: 25px;
-  // justify-content: space-between;
 }
 
 app-toys-settings {
   flex: 0 0 28%;
-  // border: 1px solid var(--color-accent);
-  // border-radius: 7px;
-  // background-color: rgba(31, 112, 127, .3);
-  // backdrop-filter: blur(6px);
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -39,18 +33,17 @@ app-toys-list {
   flex: 0 0 72%;
   display: flex;
   flex-direction: column;
-  // gap: 5px;
 }
 
 @media (max-width: 768px) {
   .toys-page__inner {
     flex-wrap: wrap;
-    padding:5px;
+    padding: 5px;
   }
 
   app-toys-settings {
     flex: 0 0 100%;
-    
+
   }
 
   app-toys-list {

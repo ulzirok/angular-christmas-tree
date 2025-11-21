@@ -8,10 +8,10 @@ import { IBg } from '../../../features/tree/models/bg';
   styleUrl: './tree-bg.scss',
 })
 export class TreeBg {
-  @Input() bg!: IBg
-  @Output() bgChosen = new EventEmitter()
-  
+  @Input() bg!: IBg;
+  @Output() bgChosen = new EventEmitter();
+
   chooseBg(valueBg: string) {
-    this.bgChosen.emit(valueBg)
+    this.bgChosen.emit(valueBg);
   }
 }

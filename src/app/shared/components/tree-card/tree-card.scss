@@ -8,13 +8,13 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  
+
   transform: scale(1);
-    transition: 0.3s;
-  
-    &:hover {
-      transform: scale(1.05);
-    }
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 img {
@@ -28,8 +28,8 @@ img {
     border-radius: 9px;
     background-size: auto 55px;
   }
-  
-    img {
-      height: 50px;
-    }
+
+  img {
+    height: 50px;
+  }
 }

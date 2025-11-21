@@ -9,13 +9,13 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 export class ToysService {
   private http = inject(HttpClient);
   private url: string = 'assets/data/toys.json';
-  
+
   private toysSubject$ = new BehaviorSubject<IToy[]>([]); //приватный исходный массив
   public toys$: Observable<IToy[]> = this.toysSubject$.asObservable(); //публичный исходный массив для компонентов
 
   getToys(): void {
     this.http.get<IToy[]>(this.url).subscribe(toys => {
-    this.toysSubject$.next(toys);
+      this.toysSubject$.next(toys);
     });
   }
 }

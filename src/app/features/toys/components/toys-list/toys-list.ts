@@ -13,13 +13,13 @@ import { StateService } from '../../../../state-service';
   styleUrl: './toys-list.scss',
 })
 export class ToysList implements OnInit {
-  toys$!: Observable<IToy[]>
-  
-  private toysService = inject(ToysService)
-  private stateService = inject(StateService)
-  
+  toys$!: Observable<IToy[]>;
+
+  private toysService = inject(ToysService);
+  private stateService = inject(StateService);
+
   ngOnInit(): void {
-    this.toysService.getToys()
-    this.toys$ = this.stateService.filteredToys$
+    this.toysService.getToys();
+    this.toys$ = this.stateService.filteredToys$;
   }
 }

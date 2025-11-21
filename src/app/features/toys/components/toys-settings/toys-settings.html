@@ -16,45 +16,48 @@
 <div class="settings__filter">
   <div class="settings__filter-form">
     <p>ФОРМА:</p>
-    
+
     <div class="settings__filter-toys">
       @for (shape of shapes$ | async; track $index) {
-        <div (click)="getSelectedShapes(shape.name)" [class.selected]="selectedShapes.includes(shape.name)" class="settings__filter-toy">
-          <img class="toys__img" [src]="shape.imageUrl" [alt]="shape.name">
-          <p class="toy__name">{{shape.name}}</p>
-        </div>
+      <div (click)="getSelectedShapes(shape.name)" [class.selected]="selectedShapes.includes(shape.name)"
+        class="settings__filter-toy">
+        <img class="toys__img" [src]="shape.imageUrl" [alt]="shape.name">
+        <p class="toy__name">{{shape.name}}</p>
+      </div>
       }
     </div>
   </div>
   <div class="settings__filter-color-wrap">
     <p>ЦВЕТ:</p>
-    
+
     <div class="settings__filter-colors">
       @for (color of colors$ | async; track $index) {
-        <div (click)="getSelectedColors(color.name)" [class.selected]="selectedColors.includes(color.name)" class="settings__filter-color">
-          <img [src]="color.imageUrl" [alt]="color.name" class="color__img">
-        </div>
+      <div (click)="getSelectedColors(color.name)" [class.selected]="selectedColors.includes(color.name)"
+        class="settings__filter-color">
+        <img [src]="color.imageUrl" [alt]="color.name" class="color__img">
+      </div>
       }
     </div>
   </div>
   <div class="settings__filter-size-wrap">
     <p>РАЗМЕР:</p>
-    
+
     <div class="settings__filter-sizes">
       @for (size of sizes$ | async; track $index) {
-        <label class="settings__filter-size">
-          <input (change)="getSelectedSizes(size.name)" class="size__checkbox" type="checkbox" [checked]="selectedSizes.includes(size.name)">
-          <span class="size__checkmark"></span>
-          <p class="size__name">{{size.name}}</p>
-        </label>
+      <label class="settings__filter-size">
+        <input (change)="getSelectedSizes(size.name)" class="size__checkbox" type="checkbox"
+          [checked]="selectedSizes.includes(size.name)">
+        <span class="size__checkmark"></span>
+        <p class="size__name">{{size.name}}</p>
+      </label>
       }
     </div>
   </div>
   <div class="settings__filter-favorites">
     <p>ТОЛЬКО ЛЮБИМЫЕ:</p>
-    
+
     <div class="settings__filter-sizes">
-      <label class="settings__filter-size"> 
+      <label class="settings__filter-size">
         <input class="size__checkbox" type="checkbox" (change)="checkboxValueChange($event)">
         <span class="size__checkmark"></span>
       </label>
@@ -62,21 +65,20 @@
   </div>
   <div class="settings__filter-range">
     <p>ГОД ПРИОБРЕТЕНИЯ:</p>
-      <p>
-        <input (change)="rangeValueChange($event)" type="range" min="1940" max="2021" step="10" class="settings__filter-range-input" value="1940" min="1940" max="2020">
-      </p>
-      <div class="settings__filter-range-years">
-        <p class="year">1940</p>
-        <p class="year-selected"></p>
-        <p class="year">2020</p>
-      </div>
+    <p>
+      <input (change)="rangeValueChange($event)" type="range" min="1940" max="2021" step="10"
+        class="settings__filter-range-input" value="1940" min="1940" max="2020">
+    </p>
+    <div class="settings__filter-range-years">
+      <p class="year">1940</p>
+      <p class="year-selected"></p>
+      <p class="year">2020</p>
+    </div>
   </div>
-  
+
 </div>
 
 <div class="settings__btns">
   <button class="btn">Сохранить</button>
   <app-button-reset (filtersResetted)="onFiltersResetted()"></app-button-reset>
 </div>
-
-

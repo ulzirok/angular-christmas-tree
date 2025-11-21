@@ -1,3 +1,3 @@
 import { IShape } from "./shape-model";
 
-export interface ISize extends IShape {}
+export interface ISize extends IShape { }

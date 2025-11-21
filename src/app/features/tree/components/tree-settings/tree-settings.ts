@@ -17,50 +17,50 @@ import { IGarland } from '../../models/garkand';
   styleUrl: './tree-settings.scss',
 })
 export class TreeSettings implements OnInit {
-  trees$!: Observable<ITree[]>
-  bgs$!: Observable<IBg[]>
-  garlands$!: Observable<IGarland[]>
-  audio$!: Observable<boolean>
-  isSnowing$!: Observable<boolean>
-  
-  private treeService = inject(TreeService)
-  
+  trees$!: Observable<ITree[]>;
+  bgs$!: Observable<IBg[]>;
+  garlands$!: Observable<IGarland[]>;
+  audio$!: Observable<boolean>;
+  isSnowing$!: Observable<boolean>;
+
+  private treeService = inject(TreeService);
+
   onChosenTree(valueTree: string) {
-    this.treeService.chooseTree(valueTree)
+    this.treeService.chooseTree(valueTree);
   }
-  
+
   onBgChosen(valueBg: string) {
-    this.treeService.chooseBg(valueBg)
+    this.treeService.chooseBg(valueBg);
   }
-  
+
   onSwitch(event: Event) {
-    const valueSwitch = (event.target as HTMLInputElement).checked
-    this.treeService.onSwitcherGarland(valueSwitch)
+    const valueSwitch = (event.target as HTMLInputElement).checked;
+    this.treeService.onSwitcherGarland(valueSwitch);
   }
-  
+
   changeColor(valueColor: string) {
-    this.treeService.chooseGarland(valueColor)
+    this.treeService.chooseGarland(valueColor);
   }
-  
+
   onAudioSwitched() {
-    this.treeService.audioSwitcher()
+    this.treeService.audioSwitcher();
   }
-  
+
   onSnowSwitched() {
-    this.treeService.snowSwitcher()
+    this.treeService.snowSwitcher();
   }
-  
+
   ngOnInit(): void {
-    this.treeService.getTrees()
-    this.trees$ = this.treeService.trees$
-    
-    this.treeService.getBgs()
-    this.bgs$ = this.treeService.bgs$
-    
-    this.treeService.getGarlands()
-    this.garlands$ = this.treeService.garlands$
-    
-    this.audio$ = this.treeService.isAudioOn$
-    this.isSnowing$ = this.treeService.isSnowOn$
+    this.treeService.getTrees();
+    this.trees$ = this.treeService.trees$;
+
+    this.treeService.getBgs();
+    this.bgs$ = this.treeService.bgs$;
+
+    this.treeService.getGarlands();
+    this.garlands$ = this.treeService.garlands$;
+
+    this.audio$ = this.treeService.isAudioOn$;
+    this.isSnowing$ = this.treeService.isSnowOn$;
   }
 }

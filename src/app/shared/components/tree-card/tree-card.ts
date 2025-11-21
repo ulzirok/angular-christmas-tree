@@ -8,10 +8,10 @@ import { ITree } from '../../../features/tree/models/tree';
   styleUrl: './tree-card.scss',
 })
 export class TreeCard {
-  @Input() tree!: ITree
-  @Output() chosenTree = new EventEmitter()
-  
+  @Input() tree!: ITree;
+  @Output() chosenTree = new EventEmitter();
+
   chooseTree(valueTree?: string) {
-    this.chosenTree.emit(valueTree)
+    this.chosenTree.emit(valueTree);
   }
 }
