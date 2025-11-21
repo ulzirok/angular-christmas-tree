@@ -43,6 +43,7 @@ export class Favourites implements OnInit {
 
     // обработчик движения
     const moveHandler = (event: PointerEvent) => {
+      event.preventDefault();
       if (!this.dragElem) return;
 
       this.dragElem.style.top = event.clientY - 25 + 'px';
@@ -51,7 +52,7 @@ export class Favourites implements OnInit {
 
     // обработчик отпускания
     const upHandler = (event: PointerEvent) => {
-      document.removeEventListener('pointermove', moveHandler);
+      document.addEventListener('pointermove', moveHandler, { passive: false });
       document.removeEventListener('pointerup', upHandler);
 
       if (!this.dragElem) return;
