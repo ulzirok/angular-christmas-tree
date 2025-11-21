@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { IBg } from '../../../features/tree/models/bg';
 
 @Component({
@@ -6,6 +6,7 @@ import { IBg } from '../../../features/tree/models/bg';
   imports: [],
   templateUrl: './tree-bg.html',
   styleUrl: './tree-bg.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TreeBg {
   @Input() bg!: IBg;

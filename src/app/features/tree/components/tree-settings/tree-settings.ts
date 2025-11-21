@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ButtonVolume } from '../../../../shared/components/button-volume/button-volume';
 import { ButtonSnow } from '../../../../shared/components/button-snow/button-snow';
 import { TreeCard } from '../../../../shared/components/tree-card/tree-card';
@@ -15,6 +15,7 @@ import { IGarland } from '../../models/garkand';
   imports: [ButtonVolume, ButtonSnow, TreeCard, TreeBg, AsyncPipe, NgClass],
   templateUrl: './tree-settings.html',
   styleUrl: './tree-settings.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TreeSettings implements OnInit {
   trees$!: Observable<ITree[]>;

@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ToysService } from '../../services/toys-service';
 
 @Component({
   selector: 'app-search',
   imports: [FormsModule],
   templateUrl: './search.html',
   styleUrl: './search.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Search {
   @Output() valueChanged = new EventEmitter();

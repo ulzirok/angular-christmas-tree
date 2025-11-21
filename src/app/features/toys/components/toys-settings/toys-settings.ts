@@ -1,13 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { Search } from '../search/search';
-import { ButtonVolume } from '../../../../shared/components/button-volume/button-volume';
-import { ButtonSnow } from '../../../../shared/components/button-snow/button-snow';
 import { ButtonReset } from '../../../../shared/components/button-reset/button-reset';
 import { FormsModule } from '@angular/forms';
 import { ToysService } from '../../services/toys-service';
 import { StateService } from '../../../../state-service';
 import { map, Observable } from 'rxjs';
-import { AsyncPipe, NgIf, NgClass } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { IShape } from '../../models/shape-model';
 import { IColor } from '../../models/color-model';
 import { ISize } from '../../models/size-model';
@@ -17,6 +15,7 @@ import { ISize } from '../../models/size-model';
   imports: [Search, ButtonReset, FormsModule, AsyncPipe],
   templateUrl: './toys-settings.html',
   styleUrl: './toys-settings.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToysSettings implements OnInit {
   shapes$!: Observable<IShape[]>;

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITree } from '../../../features/tree/models/tree';
 
 @Component({
@@ -6,6 +6,7 @@ import { ITree } from '../../../features/tree/models/tree';
   imports: [],
   templateUrl: './tree-card.html',
   styleUrl: './tree-card.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TreeCard {
   @Input() tree!: ITree;
