@@ -104,6 +104,9 @@ export class StateService {
           case 'name-asc':
             finalFilteredToys = [...finalFilteredToys].sort((a, b) => a.name.localeCompare(b.name)) 
             break;
+          case 'name-all':
+            finalFilteredToys
+            break;
         
           case 'name-desc':
             finalFilteredToys = [...finalFilteredToys].sort((a, b) => b.name.localeCompare(a.name)) 

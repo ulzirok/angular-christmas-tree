@@ -48,8 +48,40 @@ nav {
   width: 35px;
   height: 35x;
   transform: scale(1);
+  transition: 0.3s;
 
   &:hover {
     transform: scale(1.05);
+  }
+}
+
+
+
+.logo__tree path {
+  fill: #ff3b3b;
+  animation: multiBlink 1.5s infinite linear;
+}
+
+@keyframes multiBlink {
+  0% {
+    fill: #ff3b3b;
+  }
+  17% {
+    fill: #ffd93b;
+  }
+  33% {
+    fill: #ff8c00;
+  }
+  50% {
+    fill: #3bff4a;
+  }
+  67% {
+    fill: #3ba2ff;
+  }
+  83% {
+    fill: #9b30ff;
+  }
+  100% {
+    fill: #ff3b3b;
   }
 }

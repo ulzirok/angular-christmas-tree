@@ -1,3 +1,24 @@
 <button>
-  <img src="assets/images/svg/snow.svg" alt="snow" width="35" height="35">
+  <img (click)="switchSnow($event)" src="assets/images/svg/snow.svg" alt="snow" width="35" height="35">
 </button>
+
+@if (isSnowing) {
+  <div class="snow-container">
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+    <span class="snowflake"><img src="assets/images/svg/snow.svg" alt="snow"></span>
+  </div>
+}
+

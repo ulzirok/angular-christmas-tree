@@ -14,7 +14,7 @@
 }
 
 app-search {
-  margin-left: 10px;
+  width: 100%;
 }
 
 .settings__sort {
@@ -82,6 +82,13 @@ app-search {
     cursor: pointer;
     border: 2px solid transparent;
     // padding: 2px;
+    
+    transform: scale(1);
+      transition: 0.3s;
+    
+      &:hover {
+        transform: scale(1.05);
+      }
   }
 
   &-colors {

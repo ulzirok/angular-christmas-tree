@@ -20,6 +20,8 @@ export class TreeSettings implements OnInit {
   trees$!: Observable<ITree[]>
   bgs$!: Observable<IBg[]>
   garlands$!: Observable<IGarland[]>
+  audio$!: Observable<boolean>
+  isSnowing$!: Observable<boolean>
   
   private treeService = inject(TreeService)
   
@@ -33,11 +35,19 @@ export class TreeSettings implements OnInit {
   
   onSwitch(event: Event) {
     const valueSwitch = (event.target as HTMLInputElement).checked
-    this.treeService.onSwitcher(valueSwitch)
+    this.treeService.onSwitcherGarland(valueSwitch)
   }
   
   changeColor(valueColor: string) {
     this.treeService.chooseGarland(valueColor)
+  }
+  
+  onAudioSwitched() {
+    this.treeService.audioSwitcher()
+  }
+  
+  onSnowSwitched() {
+    this.treeService.snowSwitcher()
   }
   
   ngOnInit(): void {
@@ -49,5 +59,8 @@ export class TreeSettings implements OnInit {
     
     this.treeService.getGarlands()
     this.garlands$ = this.treeService.garlands$
+    
+    this.audio$ = this.treeService.isAudioOn$
+    this.isSnowing$ = this.treeService.isSnowOn$
   }
 }

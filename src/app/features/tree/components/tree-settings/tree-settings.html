@@ -1,7 +1,7 @@
 <div class="tree__setting">
   <div class="tree__setting-top">
-    <app-button-volume></app-button-volume>
-    <app-button-snow></app-button-snow>
+    <app-button-volume (audioSwitched)="onAudioSwitched()" [isAudioOn]="audio$ | async"></app-button-volume>
+    <app-button-snow (snowSwitched)="onSnowSwitched()" [isSnowing]="(isSnowing$ | async)!"></app-button-snow>
   </div>
   <div class="tree__setting-tree">
     <p>ВЫБЕРИТЕ ЁЛКУ</p>
