@@ -33,6 +33,11 @@
   pointer-events: none;
 }
 
+.christmas-tree__bg,
+.favourite__toys {
+  touch-action: none;
+}
+
 
 @media(max-width: 1100px) {
   .christmas-tree__bg {
