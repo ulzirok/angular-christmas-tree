@@ -1,59 +1,39 @@
-# AngularChristmasTree
+# 🎄 Christmas Tree 
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+— интерактивное **Angular**-приложение, разработанное для практики с **реактивностью** **(RxJS)**, **Observables**, **BehaviorSubject**. В проекте использованы подходы оптимизации и производительности, такие как **ChangeDetectionStrategy.OnPush** и **Lazy Loading**.
 
-## Development server
+Пользователь может сортировать игрушки по названию и количеству, находить игрушку по названию, фильтровать игрушки по форме, цвету, размеру, а также приложение имеет интерактивную страницу, где можно украсить новогоднюю елку выбранными игрушками, включить музыку и наблюдать анимированный снег.  
 
-To start a local development server, run:
+---
 
+### Что я узнала
+- Как организовывать логику в сервисах вместо компонентов
+- Работа с BehaviorSubject, Observables и реактивностью RxJS
+- Оптимизировать компоненты через ChangeDetectionStrategy.OnPush
+- Как проектировать приложение на Angular
+- LocalStorage для сохранения настроек
+
+### Технологии
+- Angular 20+  
+- TypeScript
+- RxJS
+
+## Скриншоты проекта
+
+![Главная страница](./screenshots/main.jpg)
+
+![Страница с настройками](./screenshots/settings.jpg)
+
+![Страница Ёлки](./screenshots/tree.jpg)
+
+### Установка и запуск
 ```bash
+# Клонировать репозиторий
+git clone https://github.com/ulzirok/angular-christmas-tree.git
+
+# Установить зависимости
+npm install
+
+# Запустить Angular-приложение
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
