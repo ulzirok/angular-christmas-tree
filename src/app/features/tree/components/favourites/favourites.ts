@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, OnInit } from '@angular/core';
 import { StateService } from '../../../../state-service';
 import { ToysService } from '../../../toys/services/toys-service';
 import { Observable } from 'rxjs';
@@ -10,6 +10,7 @@ import { AsyncPipe } from '@angular/common';
   imports: [AsyncPipe],
   templateUrl: './favourites.html',
   styleUrl: './favourites.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Favourites implements OnInit {
   private stateService = inject(StateService);

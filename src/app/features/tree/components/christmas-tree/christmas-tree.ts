@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TreeService } from '../../services/tree-service';
 import { AsyncPipe, NgStyle, NgClass, NgIf } from '@angular/common';
@@ -8,6 +8,7 @@ import { AsyncPipe, NgStyle, NgClass, NgIf } from '@angular/common';
   imports: [AsyncPipe, NgStyle, NgClass],
   templateUrl: './christmas-tree.html',
   styleUrl: './christmas-tree.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChristmasTree implements OnInit {
   bg$!: Observable<string>;

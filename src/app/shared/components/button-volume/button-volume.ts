@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button-volume',
   imports: [],
   templateUrl: './button-volume.html',
   styleUrl: './button-volume.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonVolume {
   @Output() audioSwitched = new EventEmitter();

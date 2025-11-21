@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IToy } from '../../models/toy-model';
 
 @Component({
@@ -6,6 +6,7 @@ import { IToy } from '../../models/toy-model';
   imports: [],
   templateUrl: './toy-card.html',
   styleUrl: './toy-card.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToyCard {
   @Input() toy?: IToy;

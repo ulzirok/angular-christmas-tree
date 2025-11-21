@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ToyCard } from '../toy-card/toy-card';
 import { Observable } from 'rxjs';
 import { IToy } from '../../models/toy-model';
@@ -11,6 +11,7 @@ import { StateService } from '../../../../state-service';
   imports: [ToyCard, AsyncPipe, NgFor],
   templateUrl: './toys-list.html',
   styleUrl: './toys-list.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToysList implements OnInit {
   toys$!: Observable<IToy[]>;
