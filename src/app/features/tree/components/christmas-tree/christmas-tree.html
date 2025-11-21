@@ -1,8 +1,8 @@
 <div class="christmas-tree__bg" [style.backgroundImage]="'url(' + (bg$ | async) + ')'">
-  
-    <img [src]="tree$ | async" alt="tree" class="christmas-tree">
-    <div class="tree-toys"></div>
-  
+
+  <img [src]="tree$ | async" alt="tree" class="christmas-tree">
+  <div class="tree-toys"></div>
+
   <div class="garland-container" [ngStyle]="{display: (isOnGarland$ | async) ? 'flex' : 'none'}">
     <ul class="lightrope">
       @for (light of lights1; track $index) {
@@ -34,5 +34,5 @@
       }
     </ul>
   </div>
-  
+
 </div>

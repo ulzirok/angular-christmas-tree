@@ -4,7 +4,6 @@ import { ToysService } from '../../../toys/services/toys-service';
 import { Observable } from 'rxjs';
 import { IToy } from '../../../toys/models/toy-model';
 import { AsyncPipe } from '@angular/common';
-import { TreeService } from '../../services/tree-service';
 
 @Component({
   selector: 'app-favourites',
@@ -15,11 +14,9 @@ import { TreeService } from '../../services/tree-service';
 export class Favourites implements OnInit {
   private stateService = inject(StateService);
   private toysService = inject(ToysService);
-  private treeService = inject(TreeService);
   toys$!: Observable<IToy[]>;
-  
+
   private dragElem: HTMLImageElement | null = null;
-  constructor(private host: ElementRef) { }
 
   ngOnInit(): void {
     this.toysService.getToys();
@@ -27,7 +24,7 @@ export class Favourites implements OnInit {
   }
 
   startDrag(toy: IToy, e: PointerEvent) {
-    e.preventDefault(); // <— важно, отключает браузерный drag
+    e.preventDefault();
 
     // создаём копию игрушки
     const img = document.createElement('img');
@@ -82,11 +79,11 @@ export class Favourites implements OnInit {
         newToy.style.top = event.clientY - layerRect.top - 25 + 'px';
 
         toyLayer.appendChild(newToy);
-        
-        newToy.style.pointerEvents = 'auto'; // ← чтобы можно было нажать
+
+        newToy.style.pointerEvents = 'auto';
         newToy.addEventListener('pointerdown', (ev) => {
           ev.stopPropagation();
-          this.startReDrag(newToy, ev);      // ← повторный drag
+          this.startReDrag(newToy, ev);      //повторный drag
         });
 
       }
@@ -94,13 +91,13 @@ export class Favourites implements OnInit {
       // удаляем летающую игрушку
       this.dragElem.remove();
       this.dragElem = null;
-      
+
     };
 
     document.addEventListener('pointermove', moveHandler);
     document.addEventListener('pointerup', upHandler);
   }
-  
+
   startReDrag(img: HTMLImageElement, e: PointerEvent) {
     e.preventDefault();
 

@@ -1,3 +1,3 @@
 import { IShape } from "./shape-model";
 
-export interface IColor extends IShape {}
+export interface IColor extends IShape { }

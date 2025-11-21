@@ -10,4 +10,4 @@ import { ButtonUp } from '../../../../shared/components/button-up/button-up';
   templateUrl: './toys-page.html',
   styleUrl: './toys-page.scss',
 })
-export class ToysPage {}
+export class ToysPage { }

@@ -9,10 +9,10 @@ import { ToysService } from '../../services/toys-service';
   styleUrl: './search.scss',
 })
 export class Search {
-  @Output() valueChanged = new EventEmitter()
-  
+  @Output() valueChanged = new EventEmitter();
+
   onInput(event: Event) {
-    const inputValue = (event.target as HTMLInputElement).value
-    this.valueChanged.emit(inputValue)
+    const inputValue = (event.target as HTMLInputElement).value;
+    this.valueChanged.emit(inputValue);
   }
 }

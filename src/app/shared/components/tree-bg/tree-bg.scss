@@ -9,13 +9,13 @@
   background-position: center;
   overflow: hidden;
   cursor: pointer;
-  
+
   transform: scale(1);
-    transition: 0.3s;
-  
-    &:hover {
-      transform: scale(1.05);
-    }
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 img {

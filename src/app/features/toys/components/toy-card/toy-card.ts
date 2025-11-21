@@ -8,8 +8,8 @@ import { IToy } from '../../models/toy-model';
   styleUrl: './toy-card.scss',
 })
 export class ToyCard {
-  @Input() toy?: IToy
-  
+  @Input() toy?: IToy;
+
   getImagePath(toy?: IToy) {
     return `assets/images/toys/${toy?.num}.png`;
   }
