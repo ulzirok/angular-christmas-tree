@@ -1,9 +1,9 @@
 .favourites__list {
-  display: flex;
-  flex-direction: column;
   gap: 15px;
-  // padding: 10px;
-  // margin-left: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
 }
 
 .favourite__toys {
@@ -14,31 +14,18 @@
   gap: 5px;
 }
 
-.toy-wrap {
-  width: 70px;
-  height: 70px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, .5);
-  background-size: auto 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
 img {
   height: 50px;
-}
+  width: 50px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.3s;
 
-@media(max-width: 992px) {
-  .toy-wrap {
-    width: 55px;
-    height: 55px;
-    border-radius: 9px;
-    background-size: auto 55px;
-  }
-
-  img {
-    height: 50px;
+  &:hover {
+    transform: scale(1.05);
   }
 }

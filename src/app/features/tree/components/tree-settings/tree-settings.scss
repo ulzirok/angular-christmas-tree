@@ -42,6 +42,13 @@ p {
   border-radius: 50%;
   border: 1px solid transparent;
   cursor: pointer;
+  
+  transform: scale(1);
+    transition: 0.3s;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
 }
 
 .multicolor {

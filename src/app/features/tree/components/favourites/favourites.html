@@ -2,9 +2,7 @@
   <p>ИГРУШКИ</p>
   <div class="favourite__toys">
     @for (toy of toys$ | async; track $index) {
-      <div class="toy-wrap">
-        <img [src]="getImagePath(toy)" alt="tree">
-      </div>
+    <img [src]="`assets/images/toys/${toy.num}.png`" alt="toy" draggable="false" (pointerdown)="startDrag(toy, $event)">
     }
   </div>
 </div>
